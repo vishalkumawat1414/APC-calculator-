@@ -32,4 +32,4 @@ void digitxList(Dlist *tail1, int data, Dlist **head, Dlist **tail);
 void putZeros(Dlist **head, Dlist **tail, Dlist *zero);
 void copyList(Dlist *h1, Dlist **h2, Dlist **t2);
 int Cmp(Dlist *head1, Dlist *head2);
-void filterAns(Dlist **head);
+void filterAns(Dlist **head,Dlist**tail);

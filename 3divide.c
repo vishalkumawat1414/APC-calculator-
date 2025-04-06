@@ -26,11 +26,11 @@ void divide(Dlist *head1, Dlist *head2, Dlist *tail1, Dlist *tail2, Dlist **head
         printf("ERROR: Dividing by zero\n");
         return;
     }
-    // if ((head1->data == 0 && head1->next == NULL) && (head2->data == 0 && head2->next == NULL))
-    // {
-    //     insert_first(head,tail,0);
-    //     return ;
-    // }
+    if ((head1->data == 0 && head1->next == NULL) && (head2->data == 0 && head2->next == NULL))
+    {
+        insert_first(head,tail,0);
+        return ;
+    }
     // step1 copy list2
     Dlist *head3 = NULL;
     Dlist *tail3 = NULL;

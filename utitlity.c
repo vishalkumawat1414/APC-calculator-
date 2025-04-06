@@ -386,11 +386,14 @@ int dl_delete_list(Dlist **head, Dlist **tail)
    return SUCCESS;
 }
 
-void filterAns(Dlist**head){
+void filterAns(Dlist**head,Dlist**tail){
      Dlist*temp = *head;
-     while(temp->data == 0){
+     if(*head == *tail) return;
+     
+     while(temp->data == 0&&temp!=*tail){
           temp= temp->next;
      }
      *head = temp;
      (*head)->prev = NULL;
+   
 }

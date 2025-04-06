@@ -25,30 +25,30 @@ int main(int argc , char*argv[]){
         int res = opType(argv[2]);
         int big = Who_big(head1,head2);
         res = finalSign(big,res,firstSign,secondSign,&fsign);
-
+        printf("Sign: %d\n",fsign);
         switch (res)
         {
         case 1:
             add(head1,head2,tail1 ,tail2 ,&head,&tail);
-            filterAns(&head);
+            filterAns(&head,&tail);
             printf("RESULT: ");
             printer(head);
             break;
         case 2:
              sub(head1, head2, tail1, tail2, &head, &tail);
-             filterAns(&head);
+             filterAns(&head, &tail);
              printf("RESULT: ");
              printer(head);
              break;
         case 3:
              multiply(head1, head2, tail1, tail2, &head, &tail);
-             filterAns(&head);
+             filterAns(&head, &tail);
              printf("RESULT: ");
              printer(head);
             break;
         case 4:
             divide(head1, head2, tail1, tail2, &head, &tail);
-            filterAns(&head);
+            filterAns(&head, &tail);
             printf("RESULT: ");
             printer(head);
             break;

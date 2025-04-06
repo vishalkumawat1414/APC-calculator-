@@ -26,12 +26,11 @@ void divide(Dlist *head1, Dlist *head2, Dlist *tail1, Dlist *tail2, Dlist **head
         printf("ERROR: Dividing by zero\n");
         return;
     }
-    // we will have list1 1000 , list2 10 , make list3 = list2
-    // while(1)
-    // use add (list2 , list3 , new)
-    // check new = list1  break;
-    // else ans list++
-
+    // if ((head1->data == 0 && head1->next == NULL) && (head2->data == 0 && head2->next == NULL))
+    // {
+    //     insert_first(head,tail,0);
+    //     return ;
+    // }
     // step1 copy list2
     Dlist *head3 = NULL;
     Dlist *tail3 = NULL;
@@ -88,19 +87,10 @@ void divide(Dlist *head1, Dlist *head2, Dlist *tail1, Dlist *tail2, Dlist **head
         nhead = NULL;
         ntail = NULL;
     }
-    // printer(countH);
-    // if (!greater)
-    // {
+   
         if(!greater) countH->data--;
         add(countH,ansH,countT,ansT,head,tail);
-        // *head = countH;
-        // *tail = countT;
-    // }
-    // else
-    // {
-    //     *head = ansH;
-    //     *tail = ansT;
-    // }
+      
     printf("<-------------------SUCCESS: Division Successfull!--------------------->\n");
     return;
 }

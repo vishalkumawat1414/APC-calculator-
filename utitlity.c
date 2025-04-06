@@ -102,7 +102,7 @@ int finalSign(int big, int op,int firstSign,int secondSign,int*fsign){
                else if (firstSign == 1 && secondSign == 1)
                {
                     *fsign = 1;
-                    return 4;
+                    return 3;
                }
                else{
                     *fsign = -1;
@@ -161,6 +161,8 @@ int finalSign(int big, int op,int firstSign,int secondSign,int*fsign){
                     *fsign = 1;
                     return 1; // add
                }
+               *fsign =1;
+               return 1;
           }
           //substraction
           if(op==2){
@@ -204,6 +206,8 @@ int finalSign(int big, int op,int firstSign,int secondSign,int*fsign){
                     *fsign = -1;
                     return 2; // sub
                }
+               *fsign =1;
+               return 2;
           }
 }
 int stol(Dlist**head,Dlist**tail,char arr[]){

@@ -25,7 +25,6 @@ int main(int argc , char*argv[]){
         int res = opType(argv[2]);
         int big = Who_big(head1,head2);
         res = finalSign(big,res,firstSign,secondSign,&fsign);
-        printf("Sign: %d\n", fsign);
 
         switch (res)
         {

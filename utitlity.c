@@ -277,17 +277,19 @@ void printer(Dlist*head){
      printf("\n");
 }
 
-int len(Dlist *head){
+int len(Dlist *head,Dlist*head2){
         int count  = 0;
-        while (head)
+        while (head || head2)
         {
-           count++;
+           if(head==NULL) return 1;
+           if(head2==NULL) return 2;
            head = head->next;
+           head2 = head2->next;
         }
-        return count;
+        return 3;
 }
 int Who_big(Dlist *head1, Dlist*head2){
-     if(len(head1)==len(head2)) {
+     if(len(head1,head2)==3) {
           while(head1->data==head2->data) {
               
                head1 = head1->next;
@@ -300,13 +302,13 @@ int Who_big(Dlist *head1, Dlist*head2){
           else if((head1->data<head2->data)) return 2;
          
      }
-     if(len(head1)>len(head2)) return 1;
-     if(len(head1)<len(head2)) return 2;
+     if(len(head1,head2)==1) return 1;
+     if(len(head1,head2)==2) return 2;
 }
 
 int Cmp(Dlist *head1, Dlist *head2)
 {
-     if (len(head1) == len(head2))
+     if (len(head1, head2) == 3)
      {
           while (head1->data == head2->data)
           {
@@ -322,9 +324,9 @@ int Cmp(Dlist *head1, Dlist *head2)
           else if ((head1->data < head2->data))
                return 0;
      }
-     if (len(head1) > len(head2))
+     if (len(head1, head2) == 1)
           return 1;
-     if (len(head1) < len(head2))
+     if (len(head1, head2) == 2)
           return 0;
 }
 

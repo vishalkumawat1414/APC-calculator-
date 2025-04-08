@@ -1,3 +1,20 @@
+This project is about Implementing calculator for integral values having large no. of digits or for doing
+calculation on big data which cannot be store in int , double etc data types.
+
+So for storage of num1 and num2 , final Answer we will be using doubly linkedList. 
+So, for corressponding digits we have nodes.
+
+We can perform all 4 operations add, substract, multiply and divide.
+
+INPUTS: Taken from cmd line as strings and later converted to list1 and list2.
+       eg=> ./a.out "123" + "1111"  , for multiplication: ./a.out "44" "*" "3" 
+OUTPUT: Final output will be displayed once calculation done.
+
+APC: It stands for Arbitrary Precision Calculator.
+--------------------------------------------------------------------------------
+
+Working and Precautions: 
+
 In multiplication:
      Take 3 list L1 , L2 , L3 all NULL
      1  ->find first digit multiplication and store in L2
@@ -10,3 +27,15 @@ In multiplication:
         =>repeate from first , till temp2 != NULL
 Keep in mind : make a copy funtion dont simply do L1 = L2 , it will point to same address , once we free L2 seg faul for L1 uses.
 Once delete List , make pointers NULL.
+
+In division: 
+        ->by using addition method like we have l1 100, l2 10 , we will add 10 to l2 till 
+          we get l1 and keep track of how many times we have added l2. Count will be ans.
+        ->To keep track of count we will make new list , in which one node limit is 1 to 9 only
+          if we exceed it will transfer carry and add new node starting from 1. eg for 10 , 1->0, 10+1 => 1->1
+        ->Once we reach L1 we will print Count list as answer.
+
+Final Sign & Operation:
+        If we provide string with signs eg "-123" + "+10".
+        For this it will find the final operation which will be taken and also final sign of result.
+        eg. For above final operation: Substraction, sign = '-'.

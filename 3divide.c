@@ -91,6 +91,5 @@ void divide(Dlist *head1, Dlist *head2, Dlist *tail1, Dlist *tail2, Dlist **head
         if(!greater) countH->data--;
         add(countH,ansH,countT,ansT,head,tail);
       
-    printf("<-------------------SUCCESS: Division Successfull!--------------------->\n");
     return;
 }

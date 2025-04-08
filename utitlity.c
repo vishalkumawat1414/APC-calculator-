@@ -20,7 +20,14 @@ int validate(int argc,char *argv[],int*firstSign,int*secondSign)
 
           //store sign
           *firstSign = 1;
-          if(ptr[0]=='-'){ *firstSign = -1;
+          if (!isdigit(ptr[1]))
+          {
+               printf("ERROR: Operands should contains digits only!\n");
+               return FAILURE;
+          }
+          if(ptr[0]=='-'){ 
+               
+               *firstSign = -1;
                int i =0;
                while(ptr[i]){     //shift to discard sign
                     ptr[i] = ptr[i+1];
@@ -35,19 +42,24 @@ int validate(int argc,char *argv[],int*firstSign,int*secondSign)
                }
           }
           else if(!isdigit(ptr[0])){
-               printf("ERROR: Operands should contains digits only\n");
+               printf("ERROR: Operands should contains digits only!\n");
                return FAILURE;
           }
 
           while (ptr[i]){
                if (!isdigit(ptr[i])){
-                    printf("ERROR: Operands should contains digits only\n");
+                    printf("ERROR: Operands should contains digits only!\n");
                     return FAILURE;
                }
                i++;
           }
           // second op check
           char *ptr2 = argv[3];
+          if (!isdigit(ptr2[1]))
+          {
+               printf("ERROR: Operands should contains digits only!\n");
+               return FAILURE;
+          }
           i = 1;
           //store sign
           *secondSign = 1;
@@ -65,13 +77,13 @@ int validate(int argc,char *argv[],int*firstSign,int*secondSign)
                     i++;
                }}
           else if(!isdigit(ptr2[0])){
-               printf("ERROR: Operands should contains digits only\n");
+               printf("ERROR: Operands should contains digits only!\n");
                return FAILURE;
           }
 
           while (ptr2[i]){
                if (!isdigit(ptr2[i])){
-                    printf("ERROR: Operands should contains digits only\n");
+                    printf("ERROR: Operands should contains digits only!\n");
                     return FAILURE;
                }
                i++;
@@ -259,10 +271,10 @@ void insert_first(Dlist **head,Dlist**tail, int data){
 
 void printer(Dlist*head){
      while(head){
-          printf("%d->",head->data);
+          printf("%d",head->data);
           head = head->next;
      }
-     printf("NULL\n");
+     printf("\n");
 }
 
 int len(Dlist *head){
@@ -334,8 +346,6 @@ void digitxList(Dlist*tail1,int data,Dlist**head,Dlist**tail){
      insert_first(head,tail,ans);
      tail1 = tail1->prev;
      } 
-     printf("After multiply singleH : ");
-     printer(*head);
      return;
 }
 
@@ -346,8 +356,6 @@ void putZeros(Dlist**head, Dlist**tail,Dlist*zero){
          dl_insert_last(head,tail,0);
          temp = temp->next;
      }
-     printf("After 0 append: ");
-     printer(*head);
      return ;
 }
 
@@ -386,7 +394,7 @@ int dl_delete_list(Dlist **head, Dlist **tail)
    return SUCCESS;
 }
 
-void filterAns(Dlist**head,Dlist**tail){
+void filterAns(Dlist**head,Dlist**tail){ // funtion to remove trailing zeros
      Dlist*temp = *head;
      if(*head == *tail) return;
      

@@ -53,5 +53,5 @@ void sub(Dlist *head1, Dlist *head2, Dlist *tail1, Dlist *tail2, Dlist **head, D
         borrow =0;
         insert_first(head, tail, ans);
         tail2 = tail2->prev;
-    }
+    }return ;
 }

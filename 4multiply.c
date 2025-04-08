@@ -47,6 +47,5 @@ void multiply(Dlist *head1, Dlist *head2, Dlist *tail1, Dlist *tail2, Dlist **he
 
     *head = fh;
     *tail = ft;
-    printf("<-------------------SUCCESS: Multiplication Successfull!--------------------->\n");
     return;
 }

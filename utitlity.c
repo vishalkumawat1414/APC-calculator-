@@ -20,7 +20,7 @@ int validate(int argc,char *argv[],int*firstSign,int*secondSign)
 
           //store sign
           *firstSign = 1;
-          if (!isdigit(ptr[1]))
+          if (!isdigit(ptr[1])&&(strlen(ptr)>1))
           {
                printf("ERROR: Operands should contains digits only!\n");
                return FAILURE;
@@ -55,7 +55,7 @@ int validate(int argc,char *argv[],int*firstSign,int*secondSign)
           }
           // second op check
           char *ptr2 = argv[3];
-          if (!isdigit(ptr2[1]))
+          if (!isdigit(ptr2[1])&&(strlen(ptr2)>1))
           {
                printf("ERROR: Operands should contains digits only!\n");
                return FAILURE;

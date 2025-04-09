@@ -69,7 +69,7 @@ void divide(Dlist *head1, Dlist *head2, Dlist *tail1, Dlist *tail2, Dlist **head
             dl_delete_list(&ansH, &ansT);
             ansH = NULL;
             ansT = NULL;
-            copyList(fh, &ansH, &ansT);
+            copyList(fh, &ansH, &ansT); //copy list fh to ansH
 
             dl_delete_list(&fh, &ft);
             fh = NULL;

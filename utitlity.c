@@ -173,6 +173,26 @@ int finalSign(int big, int op,int firstSign,int secondSign,int*fsign){
                     *fsign = 1;
                     return 1; // add
                }
+               if (firstSign == -1 && big == 3 && secondSign == 1)
+               {
+                    *fsign = 1;
+                    return 2;
+               }
+               if (firstSign == 1 && big == 3 && secondSign == -1)
+               {
+                    *fsign = 1;
+                    return 2;
+               }
+               if (firstSign == 1 && big == 3 && secondSign == 1)
+               {
+                    *fsign = 1;
+                    return 1;
+               }
+               if (firstSign == -1 && big == 3 && secondSign == -1)
+               {
+                    *fsign = -1;
+                    return 1;
+               }
                *fsign =1;
                return 1;
           }
@@ -217,6 +237,24 @@ int finalSign(int big, int op,int firstSign,int secondSign,int*fsign){
                {
                     *fsign = -1;
                     return 2; // sub
+               }
+               if(firstSign==-1 && big ==3 && secondSign==1){
+                    *fsign = -1;
+                    return 1;
+               }
+               if(firstSign==1 && big ==3 && secondSign==-1){
+                    *fsign=1;
+                    return 1;
+               }
+               if (firstSign == -1 && big == 3 && secondSign == -1)
+               {
+                    *fsign = 1;
+                    return 2;
+               }
+               if (firstSign == 1 && big == 3 && secondSign == 1)
+               {
+                    *fsign = 1;
+                    return 2;
                }
                *fsign =1;
                return 2;
@@ -281,8 +319,8 @@ int len(Dlist *head,Dlist*head2){
         int count  = 0;
         while (head || head2)
         {
-           if(head==NULL) return 1;
-           if(head2==NULL) return 2;
+           if(head==NULL) return 2;
+           if(head2==NULL) return 1;
            head = head->next;
            head2 = head2->next;
         }

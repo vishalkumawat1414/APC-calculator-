@@ -29,7 +29,6 @@ int main(int argc , char*argv[]){
         res = finalSign(big,res,firstSign,secondSign,&fsign);
         char sign = ' ';
         if(fsign<0) sign = '-';
-
         switch (res)
         {
         case 1:
